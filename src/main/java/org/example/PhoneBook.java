@@ -8,7 +8,10 @@ import java.util.Map;
 public class PhoneBook {
     Map<String, String> guide = new HashMap<>();
     public int add(String name, String number) {
-        return 0;
+        if (!guide.containsValue(number)) {
+            guide.put(name, number);
+        }
+        return this.guide.size();
     }
 
 }
