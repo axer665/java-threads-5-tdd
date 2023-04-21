@@ -30,4 +30,8 @@ public class PhoneBook {
     public String findByName(String name) {
         return guide.containsKey(name) ? guide.get(name) : notNameMessage;
     }
+
+    public List<String> printAllNames() {
+        return null;
+    }
 }

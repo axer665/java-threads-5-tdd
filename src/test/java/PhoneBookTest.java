@@ -114,4 +114,38 @@ public class PhoneBookTest {
         // then:
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    public void testsPrintAllNames() {
+        System.out.println("Test printAllNames");
+
+        // given:
+        List<String> expected = new ArrayList();
+        expected.add("Алексей");
+        expected.add("Ирина");
+        expected.add("Юрий");
+
+        // when:
+        sut.add("Юрий", "0983717");
+        sut.add("Алексей", "098371247");
+        sut.add("Ирина", "0983243717");
+        var result = sut.printAllNames();
+
+        // then:
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    public void testsPrintAllNamesEmpty() {
+        System.out.println("Test printAllNames empty");
+
+        // given:
+        List<String> expected = new ArrayList();
+
+        // when:
+        var result = sut.printAllNames();
+
+        // then:
+        Assertions.assertEquals(expected, result);
+    }
 }
