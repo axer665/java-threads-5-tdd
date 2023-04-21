@@ -1,9 +1,7 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class PhoneBook {
     public static String notNumberMessage = "В справочнике нет такого номера телефона";
@@ -32,6 +30,10 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        List<String> names = new ArrayList<>();
+        for (Map.Entry<String, String> entry: guide.entrySet()) {
+            names.add(entry.getKey());
+        }
+        return names.stream().sorted().collect(Collectors.toList());
     }
 }
