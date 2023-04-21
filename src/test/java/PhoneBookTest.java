@@ -75,4 +75,40 @@ public class PhoneBookTest {
         // then:
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    public void testsfindByName() {
+        System.out.println("Test findByName");
+
+        // given:
+        String name = "Вася";
+        String number = "9067697727";
+
+        String expected = PhoneBook.notNumberMessage;
+
+        // when:
+        sut.add(name, number);
+        var result = sut.findByName("Вася");
+
+        // then:
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    public void testsFindByNameMissing() {
+        System.out.println("Test findByName missing");
+
+        // given:
+        String name = "Вася";
+        String number = "9067697727";
+
+        String expected = PhoneBook.notNameMessage;
+
+        // when:
+        sut.add(name, number);
+        var result = sut.findByName("Ирина");
+
+        // then:
+        Assertions.assertEquals(expected, result);
+    }
 }

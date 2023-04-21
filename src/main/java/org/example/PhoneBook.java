@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class PhoneBook {
     public static String notNumberMessage = "В справочнике нет такого номера телефона";
+    public static String notNameMessage = "В справочнике нет такого имени";
     Map<String, String> guide = new HashMap<>();
     public int add(String name, String number) {
         if (!guide.containsValue(number)) {
@@ -24,5 +25,9 @@ public class PhoneBook {
             }
         }
         return notNumberMessage;
+    }
+
+    public String findByName(String name) {
+        return null;
     }
 }
