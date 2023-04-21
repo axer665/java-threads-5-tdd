@@ -2,6 +2,9 @@ import org.example.PhoneBook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PhoneBookTest {
     PhoneBook sut = new PhoneBook();
     @Test
@@ -84,7 +87,7 @@ public class PhoneBookTest {
         String name = "Вася";
         String number = "9067697727";
 
-        String expected = PhoneBook.notNumberMessage;
+        String expected = "9067697727";
 
         // when:
         sut.add(name, number);

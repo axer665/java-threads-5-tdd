@@ -28,6 +28,6 @@ public class PhoneBook {
     }
 
     public String findByName(String name) {
-        return null;
+        return guide.containsKey(name) ? guide.get(name) : notNameMessage;
     }
 }
