@@ -39,4 +39,40 @@ public class PhoneBookTest {
         // then:
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    public void testsFindByNumber() {
+        System.out.println("Test findByNumber");
+
+        // given:
+        String name = "Вася";
+        String number = "9067697727";
+
+        String expected = "Вася";
+
+        // when:
+        sut.add(name, number);
+        var result = sut.findByNumber(number);
+
+        // then:
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    public void testsFindByNumberMissing() {
+        System.out.println("Test findByNumber missing");
+
+        // given:
+        String name = "Вася";
+        String number = "9067697727";
+
+        String expected = "Такого номера телефона нет в справочнике";
+
+        // when:
+        sut.add(name, number);
+        var result = sut.findByNumber("0001234567");
+
+        // then:
+        Assertions.assertEquals(expected, result);
+    }
 }

@@ -14,4 +14,7 @@ public class PhoneBook {
         return this.guide.size();
     }
 
+    public String findByNumber(String number) {
+        return null;
+    }
 }
