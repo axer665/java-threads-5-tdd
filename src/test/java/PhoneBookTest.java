@@ -66,7 +66,7 @@ public class PhoneBookTest {
         String name = "Вася";
         String number = "9067697727";
 
-        String expected = "Такого номера телефона нет в справочнике";
+        String expected = PhoneBook.notNumberMessage;
 
         // when:
         sut.add(name, number);
